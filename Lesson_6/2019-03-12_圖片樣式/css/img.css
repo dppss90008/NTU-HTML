@@ -1,0 +1,26 @@
+body {
+    background-color: #9de0e8;
+}
+
+#img1 {
+    width: 300px;
+    /* border-bottom-style: solid; */
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 10px 10px 18px 0px #585858a3;
+    border-radius: 50%;
+    /* border-top-left-radius: 0; */
+    /* border-bottom-left-radius: 15px; */
+    height: 300px;
+}
+
+#img2 {
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    /* background-color: #3F51B5; */
+    background-image: url("../img/01.jpg");
+    background-size: cover;
+}
