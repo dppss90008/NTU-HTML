@@ -1,0 +1,16 @@
+
+// 宣告變數
+var x = 5
+var y = 2
+
+// 變數處理
+var z = x + y
+z
+
+
+// 使用Code
+<script>
+document.getElementById("demo").innerHTML = "Hello Dolly.";
+</script>
+
+<tag>InnerHTML</tag>

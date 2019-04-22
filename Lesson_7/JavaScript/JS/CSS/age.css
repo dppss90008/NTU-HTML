@@ -1,0 +1,12 @@
+.jumbotron {
+    background-color: #007bff;
+    color: white;
+}
+
+footer {
+    margin-top: 100px;
+    border-top-style: solid;
+    padding-top: 20px;
+    border-top-width: 1px;
+    border-color: red
+}
