@@ -148,8 +148,9 @@ footer {
 }
 
 #img1 {
-    width: 300px;
     /* border-bottom-style: solid; */
+    width: 300px;
+    height: 300px;
     border-style: solid;
     border-width: 1px;
     box-shadow: 10px 10px 18px 0px #585858a3;
@@ -157,5 +158,4 @@ footer {
     /* border-top-left-radius: 0; */
     /* border-bottom-left-radius: 15px; */
     /* ttttt */
-    height: 300px;
 }
