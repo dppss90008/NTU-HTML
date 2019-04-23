@@ -55,6 +55,10 @@ p {
 
 /* 個人學歷 */
 
+.col-lg-3 i:hover {
+    color: gray;
+}
+
 .container {
     padding-top: 40px;
     margin-bottom: 10px;
@@ -115,4 +119,30 @@ h3 {
 
 footer {
     margin-top: 50px
+}
+
+
+/* Pricing */
+
+.pricing .card {
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+#bootstrap-overrides .row .col-lg-4 a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .pricing .card:hover {
+        margin-top: -.25rem;
+        margin-bottom: .25rem;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    }
+    .pricing .card:hover .btn {
+        opacity: 1;
+    }
 }
