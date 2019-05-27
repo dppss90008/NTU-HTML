@@ -10,7 +10,8 @@ var myJSON = 0;
 $("#query").on("click", function() {
     console.log("你按到查詢了!!")
     $('.pagination').show()
-        // 如果查詢過，就不用再查詢一次了
+
+    // 如果查詢過，就不用再查詢一次了
     if (myJSON != 0) {
         alert("你已經查詢過了，不用再查了QQQ!")
         return 0;
@@ -26,6 +27,7 @@ $("#query").on("click", function() {
             for (let i = 0; i < 8; i++) {
                 newItem(myJSON["items"][i])
             }
+
         }
     });
 
@@ -57,6 +59,10 @@ $("#Next").on("click", function() {
         // 如果 Ative在 #page5 則 換頁
         newPage()
     }
+    //// 目前在第幾頁，總共多少頁面
+    var Total = Math.ceil(myJSON.items.length / 8);
+    var Now = $($(".active")).text()
+    console.log("目前在第" + Now + "頁，總共" + Total + "頁")
 
     // 換資料庫
     var page = +$($(".active")).text()
