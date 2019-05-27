@@ -95,6 +95,7 @@ $("#Previous").on("click", function() {
 
 $('#page1,#page2,#page3,#page4,#page5').on("click", function(event) {
     $('#product-list').empty();
+    $(".NowPage").empty()
     $($(".page-item")).removeClass(["active"])
     var dt = event.delegateTarget;
     $(dt).parents().closest('li').addClass('active')
@@ -103,6 +104,7 @@ $('#page1,#page2,#page3,#page4,#page5').on("click", function(event) {
     for (let i = (page - 1) * 8; i < page * 8; i++) {
         newItem(myJSON["items"][i])
     }
+    NowPage()
 })
 
 var newPage = () => {
@@ -147,5 +149,5 @@ var NowPage = () => {
     var SS = "目前在第" + ID + "頁，總共" + Total + "頁"
     console.log(SS)
     $STR = $('<p>').attr('id', 'NowPage').text(SS)
-    $('PAGE').append($STR)
+    $('#PAGE').append($STR)
 }
