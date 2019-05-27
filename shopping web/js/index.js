@@ -140,3 +140,12 @@ var lastPage = () => {
         $(ID).text(a)
     }
 }
+
+var NowPage = () => {
+    var ID = $($(".active")).text()
+    var Total = myJSON.items.length
+    var SS = "目前在第" + ID + "頁，總共" + Total + "頁"
+    console.log(SS)
+    $STR = $('<p>').attr('id', 'NowPage').text(SS)
+    $('PAGE').append($STR)
+}

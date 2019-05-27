@@ -73,3 +73,12 @@ body {
     transition-property: all;
     transition-timing-function: linear;
 }
+
+p#NowPage {
+    margin-top: -15px;
+    text-align: center;
+}
+
+.pagination {
+    justify-content: center;
+}
