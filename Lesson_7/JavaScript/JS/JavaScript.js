@@ -35,13 +35,31 @@ console.log("程式執行");
 // $("#RUN").hide()
 var age;
 
-$("#RUN").on("click", function() {
-    console.log("被按到了");
-    age = $("#exampleInputAge").val();
+// 匿名函式
+// $("#RUN").on("click", function() {
+//     console.log("被按到了");
+//     age = $("#exampleInputAge").val();
+//     if (age >= 18) {
+//         $("#Output").val("已成年，你現在 " + age + "歲");
+//     } else {
+//         $("#Output").val("未成年，你現在 " + age + "歲");
+//     }
+//     return age;
+// })
+
+var checkAge = function() {
+    var age = $("#exampleInputAge").val();
     if (age >= 18) {
         $("#Output").val("已成年，你現在 " + age + "歲");
     } else {
         $("#Output").val("未成年，你現在 " + age + "歲");
     }
     return age;
-})
+}
+$("#RUN").on("click", checkAge)
+
+// Function也是~~~資料
+
+var max = (a, b) => {
+    return (a > b) ? a : b
+}
