@@ -12,7 +12,7 @@ $("#query").on("click", function() {
     $('.pagination').show()
         // 如果查詢過，就不用再查詢一次了
     if (myJSON != 0) {
-        alert("你已經查詢過了，不用再查了!")
+        alert("你已經查詢過了，不用再查了QQQ!")
         return 0;
     }
 
