@@ -2,15 +2,15 @@ $(document).ready(function() {
     console.log("OKOK")
         // alert("FILE IS OK !! ")
     $('#product-list').empty();
-    //$('#page').hide()
+    $('.pagination').hide()
 
 })
 
 var myJSON = 0;
 $("#query").on("click", function() {
     console.log("你按到查詢了!!")
-
-    // 如果查詢過，就不用再查詢一次了
+    $('.pagination').show()
+        // 如果查詢過，就不用再查詢一次了
     if (myJSON != 0) {
         alert("你已經查詢過了，不用再查了!")
         return 0;
