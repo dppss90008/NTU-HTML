@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    console.log("OKOK")
-        // alert("FILE IS OK !! ")
+    console.log("File is ok")
+
     $('#product-list').empty();
     $('.pagination').hide()
     $('#NowPage').hide()
@@ -65,7 +65,7 @@ $("#Next").on("click", function() {
     //// 目前在第幾頁，總共多少頁面
     var Total = Math.ceil(myJSON.items.length / 8);
     var Now = $($(".active")).text()
-    console.log("目前在第" + Now + "頁，總共" + Total + "頁")
+        // console.log("目前在第" + Now + "頁，總共" + Total + "頁")
 
     // 目前第幾頁
     NowPage()
@@ -119,14 +119,14 @@ $('#page1,#page2,#page3,#page4,#page5').on("click", function(event) {
 var newPage = () => {
     var ID;
     var Last = Math.ceil(myJSON.items.length / 8);
-    console.log(Last)
+    // console.log(Last)
     if (+$($("#page5")).text() == Last) {
         return 0;
     }
 
     for (let i = 1; i < 6; i++) {
         ID = "#" + $('.page-link')[i].id
-        console.log(ID);
+            // console.log(ID);
         var a = +$(ID).text()
         a = a + 1
         $(ID).text(a)
@@ -143,9 +143,9 @@ var lastPage = () => {
 
     for (let i = 1; i < 6; i++) {
 
-        console.log(i)
+        // console.log(i)
         ID = "#" + $('.page-link')[i].id
-        console.log(ID);
+            // console.log(ID);
         var a = +$(ID).text()
         a = a - 1
         $(ID).text(a)
