@@ -40,7 +40,7 @@ $('#query').on('click', function() {
         $img0.attr('src', "poker/pic" + Card + ".png")
 
     }
-
+    console.log(Cards)
 })
 
 $('#data img').get(0)

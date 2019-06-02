@@ -3,6 +3,7 @@ $(document).ready(function() {
         // alert("FILE IS OK !! ")
     $('#product-list').empty();
     $('.pagination').hide()
+    $('#NowPage').hide()
 
 })
 
@@ -10,15 +11,16 @@ var myJSON = 0;
 $("#query").on("click", function() {
     console.log("你按到查詢了!!")
     $('.pagination').show()
+    $('#NowPage').show()
 
     // 如果查詢過，就不用再查詢一次了
     if (myJSON != 0) {
-        alert("你已經查詢過了，不用再查了QQQ!")
+        alert("你已經查詢過了，不用再查了!")
         return 0;
     }
 
     $('#product-list').empty();
-    $.getJSON("https://js.kchen.club/B12345678/query", function(response) {
+    $.getJSON("https://js.kchen.club/R06B42001/query", function(response) {
         if (response["result"] == true) {
             console.log("有資料傳入");
             $('#product-list').empty();
@@ -27,6 +29,7 @@ $("#query").on("click", function() {
             for (let i = 0; i < 8; i++) {
                 newItem(myJSON["items"][i])
             }
+            NowPage()
 
         }
     });
@@ -64,8 +67,11 @@ $("#Next").on("click", function() {
     var Now = $($(".active")).text()
     console.log("目前在第" + Now + "頁，總共" + Total + "頁")
 
-    // 換資料庫
-    var page = +$($(".active")).text()
+    // 目前第幾頁
+    NowPage()
+        // 換資料庫
+    var page = $($(".active")).text()
+    page = +page.replace("查詢", "")
     for (let i = (page - 1) * 8; i < page * 8; i++) {
         newItem(myJSON["items"][i])
     }
@@ -85,9 +91,11 @@ $("#Previous").on("click", function() {
         // 如果 Ative在 #page1 則 換頁
         lastPage()
     }
+    NowPage()
 
     // 換資料庫
-    var page = +$($(".active")).text()
+    var page = $($(".active")).text()
+    page = +page.replace("查詢", "")
     for (let i = (page - 1) * 8; i < page * 8; i++) {
         newItem(myJSON["items"][i])
     }
@@ -100,7 +108,8 @@ $('#page1,#page2,#page3,#page4,#page5').on("click", function(event) {
     var dt = event.delegateTarget;
     $(dt).parents().closest('li').addClass('active')
 
-    var page = +$(dt).text()
+    var page = $(dt).text()
+    page = +page.replace("查詢", "")
     for (let i = (page - 1) * 8; i < page * 8; i++) {
         newItem(myJSON["items"][i])
     }
@@ -145,9 +154,10 @@ var lastPage = () => {
 
 var NowPage = () => {
     var ID = $($(".active")).text()
-    var Total = myJSON.items.length
+    ID = ID.replace("查詢", "")
+    var Total = Math.ceil(myJSON.items.length / 8)
     var SS = "目前在第" + ID + "頁，總共" + Total + "頁"
     console.log(SS)
-    $STR = $('<p>').attr('id', 'NowPage').text(SS)
-    $('#PAGE').append($STR)
+        // $STR = $('<p>').attr('id', 'NowPage').text(SS)
+    $("#NowPage").text(SS)
 }

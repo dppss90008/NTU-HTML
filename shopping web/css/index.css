@@ -1,5 +1,10 @@
+.h1 .h2 {
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", sans-serif;
+}
+
 .jumbotron {
     background-color: #3F51B5;
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", sans-serif;
     color: white;
 }
 
