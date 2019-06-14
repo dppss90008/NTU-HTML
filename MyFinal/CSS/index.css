@@ -2,8 +2,7 @@
 
 #d0 img {
     position: absolute;
-    left: 230px;
-    top: 500px;
+    width: 160px;
     overflow: hidden;
     z-index: 4;
 }

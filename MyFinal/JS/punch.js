@@ -1,4 +1,4 @@
-console.log("QQ")
+console.log("Test javascript is ok")
 
 // $img = $('<img>').attr('class', 'image').attr('src', "IMG/Head1.png")
 // $("#d0").append($img)
@@ -44,6 +44,7 @@ var Showhead = (head) => {
 
 
 Showhead("#Hanhead_1")
+Showhead("#Hanhead_2")
 $('#Hanhead_1').promise().done(function() {
     Showhead("#Hanhead_1")
 });
