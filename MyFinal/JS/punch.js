@@ -76,19 +76,23 @@ var Showhead = (head, show = 0) => {
 }
 
 
+$("#Show").on('click', function() {
+    $("#Show").attr("disabled", true)
+    showTime()
+    Showhead('#d1 > #Hanhead_1', 0)
+    Showhead('#d1 > #Hanhead_2', 0)
+    Showhead('#d1 > #Hanhead_3', 0)
+    Showhead('#d1 > #Hanhead_4', 0)
+    Showhead('#d0 > #Hanhead_1', 0)
+    Showhead('#d0 > #Hanhead_2', 0)
+    Showhead('#d0 > #Hanhead_3', 0)
+    Showhead('#d0 > #Hanhead_4', 0)
+})
 
-Showhead('#d1 > #Hanhead_1', 0)
-Showhead('#d1 > #Hanhead_2', 0)
-Showhead('#d1 > #Hanhead_3', 0)
-Showhead('#d1 > #Hanhead_4', 0)
-Showhead('#d0 > #Hanhead_1', 0)
-Showhead('#d0 > #Hanhead_2', 0)
-Showhead('#d0 > #Hanhead_3', 0)
-Showhead('#d0 > #Hanhead_4', 0)
 
 
 
-
+var score = 0;
 
 
 // 打到韓國瑜的頭換頭
@@ -98,10 +102,28 @@ $("#Hanhead_1, #Hanhead_2, #Hanhead_3,#Hanhead_4").on("click", function(event) {
     if ($(event.currentTarget).attr("src") == "IMG/Head1.png") {
         $(event.currentTarget).attr("src", "IMG/Hanhead2.png")
         $(event.currentTarget).css("width", "200px")
+        score += 1;
+        $("#score > p").text("0" + score)
+        if (score >= 10 || score < 0) {
+            $("#score > p").text(score)
+        }
+        if (score >= 0) {
+            $("#score > p").css("background-color", "white")
+            $("#score > p").css("color", "red")
+        }
     }
     if ($(event.currentTarget).attr("src") == "IMG/K.png") {
         $(event.currentTarget).attr("src", "IMG/K2.png")
         $(event.currentTarget).css("width", "170px")
+        score -= 2;
+        $("#score > p").text(score)
+        if (score < 0) {
+            $("#score > p").css("background-color", "blue")
+            $("#score > p").css("color", "white")
+        }
+        if (score == 0) {
+            $("#score > p").text("0" + score)
+        }
 
     }
 
@@ -158,25 +180,31 @@ $("#time > p").text("10")
 
 
 var time = +$("#time > p").text()
-var t = time;
+
 
 function showTime() {
 
-    t -= 1;
+
     time -= 1
 
     $("#time > p").text(time)
-    if (t < 10) {
+    if (time < 10) {
         $("#time > p").text("0" + time)
     }
 
-    if (t == 0) {
+    if (time == 0) {
         //location.href = 'http://www.dotblogs.com.tw/puma/';
+        alert("您獲得" + score + "分")
+        location.reload();
+        var newwin = window.open(); //此行一定要如此書寫,否則失效
+        if (score < 0) {
+            newwin.location = 'https://www.youtube.com/watch?v=2pCaPWrTp40';
+        } else {
+            newwin.location = "https://www.facebook.com/groups/427276971375953/";
+        }
         return 0;
     }
 
     //每秒執行一次,showTime()
     setTimeout("showTime()", 1000);
 }
-
-showTime()
