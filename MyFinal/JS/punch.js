@@ -122,7 +122,7 @@ $("#Hanhead_1, #Hanhead_2, #Hanhead_3,#Hanhead_4").on("click", function(event) {
             $("#score > p").css("color", "white")
         }
         if (score == 0) {
-            $("#score > p").text("0" + score)
+            $("#score > p").text("00" + score)
         }
 
     }
