@@ -1,80 +1,163 @@
-/* 人頭 */
-
-#d0 img {
-    position: absolute;
-    width: 160px;
-    overflow: hidden;
-    cursor: pointer;
-    z-index: 4;
-}
-
-#d1 img {
-    position: absolute;
-    overflow: hidden;
-    z-index: 2;
-    width: 160px;
-    /* pointer-events: none; */
-    cursor: pointer;
-}
-
-
-/* 背景圖 */
-
-#area {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    top: 664.8px;
-    background: white;
-    pointer-events: none;
-    z-index: 5;
-}
-
-#bk img {
-    position: absolute;
-    width: 1000px;
-    z-index: 1;
-    pointer-events: none;
-}
-
-#bottom img {
-    position: absolute;
-    width: 1000px;
-    z-index: 5;
-    pointer-events: none
-}
-
-#top img {
-    position: absolute;
-    width: 1000px;
-    z-index: 3;
-    pointer-events: none
-}
-
-
-/* 按鈕 */
-
-#Show {
-    position: absolute;
-    left: 1000px;
-    /* top: 1000px; */
-}
-
-
-/* Mouse */
-
-#testarea {
-    position: absolute;
-    width: 100%;
-    height: 1000px;
-    cursor: none;
-}
-
-.cursor {
-    z-index: 99;
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    cursor: pointer;
-    pointer-events: none;
-}
+    /* 人頭 */
+    
+    #d0 img {
+        position: fixed;
+        width: 160px;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 4;
+    }
+    
+    #d1 img {
+        position: fixed;
+        overflow: hidden;
+        z-index: 2;
+        width: 160px;
+        /* pointer-events: none; */
+        cursor: pointer;
+    }
+    /* 背景圖 */
+    
+    #area {
+        position: fixed;
+        width: 1000px;
+        height: 100px;
+        top: 664.8px;
+        left: 135px;
+        background: lightblue;
+        pointer-events: none;
+        z-index: 5;
+    }
+    
+    #bk img {
+        position: fixed;
+        width: 1000px;
+        top: 0px;
+        left: 135px;
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    #bottom img {
+        position: fixed;
+        width: 1000px;
+        /* top: 20px; */
+        top: 0px;
+        left: 135px;
+        z-index: 5;
+        pointer-events: none
+    }
+    
+    #top img {
+        position: fixed;
+        width: 1000px;
+        /* top: 20px; */
+        top: 0px;
+        left: 135px;
+        z-index: 3;
+        pointer-events: none
+    }
+    /* 按鈕 */
+    
+    #Show {
+        position: fixed;
+        overflow: hidden;
+        width: 40px;
+        top: 50px;
+        left: 1180px;
+        z-index: 8;
+    }
+    /* Mouse */
+    
+    #testarea {
+        position: fixed;
+        width: 1130px;
+        top: 0px;
+        left: 130px;
+        height: 770px;
+        cursor: none;
+        border-style: solid;
+    }
+    
+    .cursor {
+        z-index: 99;
+        position: fixed;
+        width: 110px;
+        height: 110px;
+        cursor: pointer;
+        pointer-events: none;
+    }
+    /* footer */
+    
+    footer {
+        position: fixed;
+        top: 675px;
+        left: 900px;
+        z-index: 13;
+        margin-top: 20px;
+        margin-left: -400px
+    }
+    /* 倒數計時器 */
+    
+    #time h2 {
+        background-color: black;
+        color: white;
+        position: fixed;
+        left: 1350px;
+        text-align: center;
+        padding-right: 30px;
+        padding-left: 22px;
+        margin-left: -30px;
+        padding-bottom: 10px;
+    }
+    
+    #time p {
+        top: 60px;
+        font-size: 100px;
+        background-color: white;
+        color: red;
+        position: fixed;
+        left: 1350px;
+        text-align: center;
+        padding-top: -30px;
+        padding-right: 30px;
+        padding-left: 35px;
+        margin-left: -30px;
+        /* margin-right: 50px; */
+        border-style: solid;
+    }
+    /* Score */
+    
+    #score h2 {
+        background-color: black;
+        color: white;
+        position: fixed;
+        top: 230px;
+        left: 1350px;
+        text-align: center;
+        padding-right: 30px;
+        padding-left: 22px;
+        margin-left: -30px;
+        padding-bottom: 10px;
+    }
+    
+    #score p {
+        top: 283px;
+        font-size: 100px;
+        background-color: white;
+        color: red;
+        position: fixed;
+        left: 1350px;
+        text-align: center;
+        /* padding-top: -30px;
+        padding-right: 85px;
+        padding-left: 35px; */
+        /* 二位 */
+        padding-right: 30px;
+        padding-left: 35px;
+        margin-left: -30px;
+        margin-left: -30px;
+        padding-bottom: 10px;
+        /* margin-right: 50px; */
+        border-style: solid;
+    }
