@@ -50,11 +50,11 @@ var Showhead = (head, show = 0) => {
     }
     $(head).animate({
         top: '-=80px',
-    }, { duration: 1000 })
+    }, { duration: 500 })
 
     $(head).animate({
         top: '+=100px',
-    }, 1000, function() {
+    }, 500, function() {
         $(head).hide();
         $(head).css("top", origin);
 
@@ -70,7 +70,7 @@ var Showhead = (head, show = 0) => {
         //$(head).finish();
         setTimeout(function() {
             Showhead(head, 1)
-        }, getRandom(100, 8000));
+        }, getRandom(100, 6000));
 
     })
 }
@@ -103,29 +103,34 @@ $("#Hanhead_1, #Hanhead_2, #Hanhead_3,#Hanhead_4").on("click", function(event) {
         $(event.currentTarget).attr("src", "IMG/Hanhead2.png")
         $(event.currentTarget).css("width", "200px")
         score += 1;
-        $("#score > p").text("0" + score)
-        if (score >= 10 || score < 0) {
-            $("#score > p").text(score)
-        }
-        if (score >= 0) {
-            $("#score > p").css("background-color", "white")
-            $("#score > p").css("color", "red")
-        }
+
     }
     if ($(event.currentTarget).attr("src") == "IMG/K.png") {
         $(event.currentTarget).attr("src", "IMG/K2.png")
         $(event.currentTarget).css("width", "170px")
         score -= 2;
-        $("#score > p").text(score)
-        if (score < 0) {
-            $("#score > p").css("background-color", "blue")
-            $("#score > p").css("color", "white")
-        }
-        if (score == 0) {
-            $("#score > p").text("0" + score)
-        }
-
     }
+
+
+    if (score < 0) {
+        $("#score > p").css("background-color", "blue")
+        $("#score > p").css("color", "white")
+    } else {
+        $("#score > p").css("background-color", "white")
+        $("#score > p").css("color", "red")
+    }
+
+
+    if (score == 0) {
+        $("#score > p").text("0" + score)
+    }
+    if (score < 0 || score >= 10) {
+        $("#score > p").text(score)
+    }
+    if (score < 10 || score > 0) {
+        $("#score > p").text("0" + score)
+    }
+
 
 })
 
