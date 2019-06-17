@@ -50,11 +50,11 @@ var Showhead = (head, show = 0) => {
     }
     $(head).animate({
         top: '-=80px',
-    }, { duration: 500 })
+    }, { duration: 800 })
 
     $(head).animate({
         top: '+=100px',
-    }, 500, function() {
+    }, 800, function() {
         $(head).hide();
         $(head).css("top", origin);
 
@@ -78,6 +78,8 @@ var Showhead = (head, show = 0) => {
 
 $("#Show").on('click', function() {
     $("#Show").attr("disabled", true)
+    $("#set_time").click()
+    $("#set_time").attr("disabled", true)
     showTime()
     Showhead('#d1 > #Hanhead_1', 0)
     Showhead('#d1 > #Hanhead_2', 0)
@@ -87,6 +89,11 @@ $("#Show").on('click', function() {
     Showhead('#d0 > #Hanhead_2', 0)
     Showhead('#d0 > #Hanhead_3', 0)
     Showhead('#d0 > #Hanhead_4', 0)
+})
+
+$("#Show2").on('click', function() {
+    $("#Show").attr("disabled", true);
+    location.reload();
 })
 
 
@@ -127,7 +134,7 @@ $("#Hanhead_1, #Hanhead_2, #Hanhead_3,#Hanhead_4").on("click", function(event) {
     if (score < 0 || score >= 10) {
         $("#score > p").text(score)
     }
-    if (score < 10 || score > 0) {
+    if (score < 10 && score > 0) {
         $("#score > p").text("0" + score)
     }
 
@@ -181,14 +188,20 @@ $(function() {
 
 
 // 倒數計時器
-$("#time > p").text("10")
+
+$("#set_time").on('click', function() {
+
+    var set = +$("#time-control").val()
+    $("#time > p").text(set)
+    time = +$("#time > p").text()
+})
 
 
-var time = +$("#time > p").text()
+
+var time;
 
 
 function showTime() {
-
 
     time -= 1
 
